@@ -17,9 +17,10 @@ class TbReferralOutcomesAdmin(CrfModelAdminMixin, admin.ModelAdmin):
             'fields': [
                 'maternal_visit',
                 'report_datetime',
-                'referral_clinic_appt',
-                'further_tb_eval',
+                'tb_eval',
                 'tb_eval_comments',
+                'tb_eval_location',
+                'tb_eval_location_other',
                 'tb_diagnostic_perf',
                 'tb_diagnostics',
                 'tb_diagnostics_other',
@@ -31,8 +32,8 @@ class TbReferralOutcomesAdmin(CrfModelAdminMixin, admin.ModelAdmin):
             ]}
          ), audit_fieldset_tuple)
 
-    radio_fields = {'referral_clinic_appt': admin.VERTICAL,
-                    'further_tb_eval': admin.VERTICAL,
+    radio_fields = {'tb_eval': admin.VERTICAL,
+                    'tb_eval_location': admin.VERTICAL,
                     'tb_diagnostic_perf': admin.VERTICAL,
                     'tb_diagnose_pos': admin.VERTICAL,
                     'tb_treat_start': admin.VERTICAL,

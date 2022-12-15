@@ -689,7 +689,7 @@ def tb_engagement_post_save(sender, instance, raw, created, **kwargs):
           dispatch_uid='tb_referral_outcomes_post_save')
 def tb_referral_outcomes_post_save(sender, instance, raw, created, **kwargs):
     """
-    Trigger offstudy if interview consent in NO
+    Trigger offstudy if tb eval is no or treat start is yes
     """
 
     tb_off_study_cls = django_apps.get_model('flourish_caregiver.tboffstudy')
@@ -697,7 +697,7 @@ def tb_referral_outcomes_post_save(sender, instance, raw, created, **kwargs):
     trigger_action_item(tb_off_study_cls,
                         TB_OFF_STUDY_ACTION,
                         instance.subject_identifier,
-                        opt_trigger=(instance.further_tb_eval == NO
+                        opt_trigger=(instance.tb_eval == NO
                                      or instance.tb_treat_start == YES))
 
 

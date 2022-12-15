@@ -2,26 +2,16 @@ from django.db import models
 from edc_base.model_fields.custom_fields import OtherCharField
 from edc_constants.choices import YES_NO
 
-from ..choices import YES_NO_UNABLE_DET
+from ..choices import YES_NO_UNABLE_DET, EVAL_LOCATION
 from .list_models import TbDiagnostics
 from .model_mixins import CrfModelMixin
 
 
 class TbReferralOutcomes(CrfModelMixin):
-
-    referral_clinic_appt = models.CharField(
-        verbose_name='Did participant go to the TB clinic to which they were referred',
+    tb_eval = models.CharField(
+        verbose_name='Did participant go the clinic for TB evaluation?',
         max_length=3,
         choices=YES_NO)
-
-    further_tb_eval = models.CharField(
-        verbose_name=('Did the participant go to any clinic for further TB evaluation '
-                      'after they were referred?'),
-        max_length=3,
-        choices=YES_NO,
-        null=True,
-        blank=True
-    )
 
     tb_eval_comments = models.TextField(
         verbose_name=('Comments'),
@@ -29,8 +19,18 @@ class TbReferralOutcomes(CrfModelMixin):
         null=True,
         blank=True)
 
+    tb_eval_location = models.CharField(
+        verbose_name='If yes, which clinic did you go to?',
+        max_length=50,
+        choices=EVAL_LOCATION,
+        null=True,
+        blank=True
+    )
+
+    tb_eval_location_other = OtherCharField()
+
     tb_diagnostic_perf = models.CharField(
-        verbose_name=('Were TB diagnostic studies performed at the clinic visit?'),
+        verbose_name='Were TB diagnostic studies performed at the clinic visit?',
         max_length=20,
         choices=YES_NO_UNABLE_DET,
         null=True,
@@ -38,7 +38,7 @@ class TbReferralOutcomes(CrfModelMixin):
 
     tb_diagnostics = models.ManyToManyField(
         TbDiagnostics,
-        verbose_name=('What TB diagnostic studies were performed? '),
+        verbose_name='What TB diagnostic studies were performed? ',
         blank=True)
 
     tb_diagnostics_other = OtherCharField()
