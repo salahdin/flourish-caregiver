@@ -1088,3 +1088,18 @@ YES_NO_TBD = (
     (NO, NO),
     ('TBD', 'I will think about it'),
 )
+
+NOT_TESTED_REASON = (
+    ('no_apparent_reason', 'No apparent reason'),
+    ('missed_visit', 'Missed clinic visit due to time constraints/ No transport fare'),
+    ('hcw_decision', 'Healthcare worker did not say it was necessary'),
+    ('no_kits', 'Test kits out of stock'),
+    (OTHER, 'Other'),
+)
+
+PREFERRED_CLINIC = (
+    ('local', 'Local Clinic'),
+    ('flourish', 'FLOURISH Clinic'),
+    ('no_testing', 'I do not wish to have my infant tested at this time'),
+    ('other', 'Other'),
+)
