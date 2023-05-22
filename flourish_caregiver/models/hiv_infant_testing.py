@@ -11,19 +11,20 @@ class HIVInfantTesting(CrfModelMixin):
         max_length=20
     )
 
-    test_date = models.DateField(
+    child_test_date = models.DateField(
         verbose_name='What was the date of this test?',
         null=True,
         blank=True
     )
 
-    date_estimated = models.CharField(
+    child_test_date_estimated = models.CharField(
         verbose_name='Was this date estimated?',
         choices=YES_NO,
         max_length=20,
         null=True,
         blank=True
     )
+
     results_received = models.CharField(
         verbose_name='Have you received the results of this test?',
         choices=YES_NO,
@@ -31,7 +32,8 @@ class HIVInfantTesting(CrfModelMixin):
         null=True,
         blank=True
     )
-    result_date = models.CharField(
+
+    recall_result_date = models.CharField(
         verbose_name='Do you recall the date you received this test result, or even the month?',
         choices=YES_NO,
         max_length=20,
@@ -39,7 +41,7 @@ class HIVInfantTesting(CrfModelMixin):
         blank=True
     )
 
-    receive_date = models.DateField(
+    received_date = models.DateField(
         verbose_name='What date did you receive this test?',
         null=True,
         blank=True

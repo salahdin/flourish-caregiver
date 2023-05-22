@@ -1101,5 +1101,5 @@ PREFERRED_CLINIC = (
     ('local', 'Local Clinic'),
     ('flourish', 'FLOURISH Clinic'),
     ('no_testing', 'I do not wish to have my infant tested at this time'),
-    ('other', 'Other'),
+    (OTHER, 'Other'),
 )
