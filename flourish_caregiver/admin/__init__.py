@@ -80,4 +80,3 @@ from .ultrasound_admin import UltraSoundAdmin
 from .tb_routine_health_screen_v2_admin import TbRoutineHealthScreenVersionTwoAdmin
 from .maternal_arv_post_adherence_admin import MaternalArvPostAdherenceAdmin
 from .interview_focus_group_interest_admin import InterviewFocusGroupInterestAdmin
-from .hiv_infant_testing_admin import HIVInfantTestingAdmin

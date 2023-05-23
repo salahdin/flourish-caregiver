@@ -98,4 +98,3 @@ from .tb_screen_preg import TbScreenPreg
 from .tb_study_screening import TbStudyEligibility
 from .tb_visit_screening_women import TbVisitScreeningWomen
 from .ultrasound import UltraSound
-from .hiv_infant_testing import HIVInfantTesting
